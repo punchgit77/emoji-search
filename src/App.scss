@@ -1,0 +1,54 @@
+body {
+  text-align: center;
+  text-shadow: 2px 2px white;
+  background: url('./components/images/smile.jfif');
+  background-position: center;
+}
+
+.main {
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  .h {
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    color: rgb(206, 84, 104);
+    text-shadow: -2px -3px red;
+    font-size: 60px;
+    transition: bounce 0.5s ease-in-out;
+    transform: translate(-50%, -50%);
+    animation-name: wave;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 3px;
+    @for $i from 1 through 4 {
+      &:nth-of-type(#{$i}) {
+        animation-duration: 2s;
+        animation-delay: 0.8s- ($i/4);
+      }
+    }
+
+    @keyframes wave {
+      40%,
+      50% {
+        transform: translate(-50%, -65%) scale(1.05);
+      }
+      0%,
+      90%,
+      100% {
+        transform: translate(-50%, -45%) scale(0.95);
+      }
+    }
+  }
+
+  .div-1 {
+    padding-left: 35%;
+    width: 200px;
+    text-align: center;
+  }
+}
